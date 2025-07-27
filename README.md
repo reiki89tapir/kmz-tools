@@ -11,8 +11,8 @@
 - **merge_kmz.sh**
 
   - 複数の KMZ を 1 つの KMZ に結合。
-  - 各ルートに色を順番に割り当て（ABGR 8 桁、My Maps 向け）。
-  - 既存の `<styleUrl>` を消してから新しい `<Style>` を **Placemark より前**に定義（My Maps が前方参照できない問題の回避）。
+  - 各ルートに色を順番に割り当て（ABGR 8 桁、Google My Maps 向け）。
+  - 既存の `<styleUrl>` を消してから新しい `<Style>` を **Placemark より前**に定義（Google My Maps が前方参照できない問題の回避）。
   - **単体で実行可能**。
 
 - **calcKML-selectKMZ.sh**
