@@ -70,9 +70,9 @@ Usage: ./calcKML-selectKMZ.sh OUTPUT.kmz INPUT1.kmz [INPUT2.kmz …]
 ## サンプル
 
 ```bash
-# 1) そのまま結合
+# A. そのまま結合
 ./merge_kmz.sh output.kmz tracks/25*.kmz
 
-# 2) KML を見てから絞り込み → 結合
+# B. KML を見てから絞り込み → 結合
 ./calcKML-selectKMZ.sh output.kmz tracks/25*.kmz
 ```
