@@ -23,10 +23,10 @@ PowerShell版も同様に`powershell/`内で利用します。
 
 ## 動作環境 / 依存コマンド
 
-- OS: macOS または Linux（Windows は WSL 推奨）
+- OS: macOSまたはLinux（WindowsはWSL推奨）
 - Bash 3 以上（macOS付属のbashでも動作）
 - 利用コマンド: `unzip`, `zip`, `awk`, `sed`, `find`, `wc`, `tr`, `hexdump`
-- Googleマイマップでの読み込みを想定（KML/KMZ 形式）
+- Googleマイマップでの読み込みを想定（KML/KMZ形式）
 
 ## インストール
 
@@ -44,7 +44,7 @@ Usage: ./bash/merge_kmz.sh OUTPUT.kmz INPUT1.kmz [INPUT2.kmz …]
 例:    ./bash/merge_kmz.sh merged.kmz dir/25*.kmz
 ```
 
-- 実行すると「色の見本」を表示し、**最初の KMZ に使う開始色**を尋ねます（1〜色数）。
+- 実行すると「色の見本」を表示し、**最初のKMZに使う開始色**を尋ねます（1〜色数）。
   Enterだけ押すと1番の色から順に割り当てます。
 - **非対話**（パイプやリダイレクト）では自動で1番から開始します。
 - ルート名はKMZファイル名から拡張子`.kmz`を除き、**先頭の`_`までを取り除いた部分**を使います。
