@@ -1,5 +1,6 @@
 # KMZ Tools for Google My Maps
 
+test-1
 複数の KMZ を結合して **Google マイマップ** で色・スタイルが正しく出るように整えるツール群です。  
 `merge_kmz.sh` は単体で動作します。  
 `calcKML-selectKMZ.sh` を使う場合は、**同じディレクトリ**に `merge_kmz.sh` を置いてください。
