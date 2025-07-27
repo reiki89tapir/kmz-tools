@@ -1,9 +1,11 @@
 # KMZ Tools for Google My Maps
 
 複数の KMZ を結合して **[Google My Maps](https://mymaps.google.com)** で色・スタイルが正しく出るように整えるツール群です。  
-スクリプトは Bash 版と PowerShell 版があり、それぞれ `bash/` と `powershell/` ディレクトリにまとめています。
-`bash/merge_kmz.sh` は単体で動作します。
-`bash/calcKML-selectKMZ.sh` を使う場合は、**同じディレクトリ**に `bash/merge_kmz.sh` を置いてください。PowerShell 版も同様に `powershell/` 内で利用します。
+スクリプトは Bash 版と PowerShell 版があり、それぞれ `bash/` と `powershell/` ディレクトリにまとめています。  
+<br>
+`bash/merge_kmz.sh` は単体で動作します。  
+`bash/calcKML-selectKMZ.sh` を使う場合は、**同じディレクトリ**に `bash/merge_kmz.sh` を置いてください。  
+PowerShell 版も同様に `powershell/` 内で利用します。
 
 ## 機能概要
 
