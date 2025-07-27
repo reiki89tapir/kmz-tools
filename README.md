@@ -1,9 +1,9 @@
 # KMZ Tools for Google My Maps
 
 複数の KMZ を結合して **[Google My Maps](https://mymaps.google.com)** で色・スタイルが正しく出るように整えるツール群です。  
-`merge_kmz.sh` は単体で動作します。  
-`calcKML-selectKMZ.sh` を使う場合は、**同じディレクトリ**に `merge_kmz.sh` を置い
-てください。
+スクリプトは Bash 版と PowerShell 版があり、それぞれ `bash/` と `powershell/` ディレクトリにまとめています。
+`bash/merge_kmz.sh` は単体で動作します。
+`bash/calcKML-selectKMZ.sh` を使う場合は、**同じディレクトリ**に `bash/merge_kmz.sh` を置いてください。PowerShell 版も同様に `powershell/` 内で利用します。
 
 ## 機能概要
 
@@ -17,7 +17,7 @@
 - **calcKML-selectKMZ.sh**
   - 入力 KMZ 群を解凍し、含まれる **KML のリストとサイズ**を表示。
   - 対話式に KML を選び、**選ばれた KML を含む KMZ**だけを `merge_kmz.sh` に渡して結合。
-  - `merge_kmz.sh` への依存あり。**2 つのスクリプトは同じディレクトリに配置**してください。
+  - `merge_kmz.sh` への依存あり。**2 つのスクリプトは同じディレクトリ（本リポジトリでは bash/ または powershell/）に配置**してください。
 
 ## 動作環境 / 依存コマンド
 
@@ -30,7 +30,7 @@
 
 ```bash
 # クローン後（またはダウンロード後）
-chmod +x merge_kmz.sh calcKML-selectKMZ.sh
+chmod +x bash/*.sh
 ```
 
 ## 使い方
@@ -38,8 +38,8 @@ chmod +x merge_kmz.sh calcKML-selectKMZ.sh
 ### A. `merge_kmz.sh`（単体で実行可能）
 
 ```
-Usage: ./merge_kmz.sh OUTPUT.kmz INPUT1.kmz [INPUT2.kmz …]
-例:    ./merge_kmz.sh merged.kmz dir/25*.kmz
+Usage: ./bash/merge_kmz.sh OUTPUT.kmz INPUT1.kmz [INPUT2.kmz …]
+例:    ./bash/merge_kmz.sh merged.kmz dir/25*.kmz
 ```
 
 - 実行すると「色の見本」を表示し、**最初の KMZ に使う開始色**を尋ねます（1〜色数）。
@@ -52,14 +52,14 @@ Usage: ./merge_kmz.sh OUTPUT.kmz INPUT1.kmz [INPUT2.kmz …]
 ### B. `calcKML-selectKMZ.sh`（対話式フィルタ → 結合）
 
 ```
-Usage: ./calcKML-selectKMZ.sh OUTPUT.kmz INPUT1.kmz [INPUT2.kmz …]
-例:    ./calcKML-selectKMZ.sh merged.kmz dir/25*.kmz
+Usage: ./bash/calcKML-selectKMZ.sh OUTPUT.kmz INPUT1.kmz [INPUT2.kmz …]
+例:    ./bash/calcKML-selectKMZ.sh merged.kmz dir/25*.kmz
 ```
 
 1. 各 KMZ 内の **KML 一覧**（番号, サイズ\[bytes], パス）を表示。
 2. 範囲指定（例: `1-3 7 10-12`）、`all`、`list`、`q` に対応。
 3. 選んだ KML を **含む KMZ を一意化**して `merge_kmz.sh` に渡し、結合します。
-4. `merge_kmz.sh` が **同じディレクトリ**にあり、実行権限が必要です。
+4. `merge_kmz.sh` が **同じディレクトリ（bash/ または powershell/）**にあり、実行権限が必要です。
 
 ## 注意点・既知の仕様
 
@@ -72,8 +72,8 @@ Usage: ./calcKML-selectKMZ.sh OUTPUT.kmz INPUT1.kmz [INPUT2.kmz …]
 
 ```bash
 # A. そのまま結合
-./merge_kmz.sh output.kmz tracks/25*.kmz
+./bash/merge_kmz.sh output.kmz tracks/25*.kmz
 
 # B. KML を見てから絞り込み → 結合
-./calcKML-selectKMZ.sh output.kmz tracks/25*.kmz
+./bash/calcKML-selectKMZ.sh output.kmz tracks/25*.kmz
 ```
