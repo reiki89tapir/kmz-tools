@@ -26,7 +26,7 @@ PowerShell版も同様に`powershell/`内で利用します。
 - OS: macOSまたはLinux（WindowsはWSL推奨）
 - Bash 3 以上（macOS付属のbashでも動作）
 - 利用コマンド: `unzip`, `zip`, `awk`, `sed`, `find`, `wc`, `tr`, `hexdump`
-- Googleマイマップでの読み込みを想定（KML/KMZ形式）
+- Google My Mapsでの読み込みを想定（KML/KMZ形式）
 
 ## インストール
 
@@ -65,7 +65,7 @@ Usage: ./bash/calcKML-selectKMZ.sh OUTPUT.kmz INPUT1.kmz [INPUT2.kmz …]
 
 ## 注意点・既知の仕様
 
-- My マップ側の制限により、非常に大きな KML/KMZは読み込みに時間がかかったり、分割が必要な場合があります。
+- Google My Maps側の制限により、非常に大きな KML/KMZは読み込みに時間がかかったり、分割が必要な場合があります。
 - 色指定は KML の仕様に合わせた **ABGR**（アルファ＋青緑赤）8 桁です。
 - 既存の`<Style>`と`<styleUrl>`は統一のため除去し、新しいスタイルを先に定義します。
 - `calcKML-selectKMZ.sh` で複数KMLを選んでも、**同じKMZに入っている場合は1回だけ渡します**（重複排除）。
