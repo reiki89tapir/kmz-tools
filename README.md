@@ -7,7 +7,7 @@
 `bash/calcKML-selectKMZ.sh`を使う場合は、**同じディレクトリ**に`bash/merge_kmz.sh`を置いてください。  
 PowerShell版も同様に`powershell/`内で利用します。
 
----
+
 
 <!-- TOC tocDepth:2..3 chapterDepth:2..6 -->
 
