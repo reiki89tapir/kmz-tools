@@ -7,7 +7,21 @@
 `bash/calcKML-selectKMZ.sh`を使う場合は、**同じディレクトリ**に`bash/merge_kmz.sh`を置いてください。  
 PowerShell版も同様に`powershell/`内で利用します。
 
-## 機能概要
+<!-- TOC tocDepth:2..3 chapterDepth:2..6 -->
+
+<font size="+2">**TOC**</font><!-- omit in toc -->
+- [1. 機能概要](#1-機能概要)
+- [2. 動作環境 / 依存コマンド](#2-動作環境--依存コマンド)
+- [3. インストール](#3-インストール)
+- [4. 使い方](#4-使い方)
+  - [4.1. A. `merge_kmz.sh`（単体で実行可能）](#41-a-merge_kmzsh単体で実行可能)
+  - [4.2. B. `calcKML-selectKMZ.sh`（対話式フィルタ → 結合）](#42-b-calckml-selectkmzsh対話式フィルタ--結合)
+- [5. 注意点・既知の仕様](#5-注意点既知の仕様)
+- [6. サンプル](#6-サンプル)
+
+<!-- /TOC -->
+
+## 1. 機能概要
 
 - **merge_kmz.sh**
 
@@ -21,23 +35,23 @@ PowerShell版も同様に`powershell/`内で利用します。
   - 対話式にKMLを選び、**選ばれたKMLを含むKMZ**だけを`merge_kmz.sh`に渡して結合。
   - `merge_kmz.sh`への依存あり。**2つのスクリプトは同じディレクトリ（本リポジトリではbash/またはpowershell/）に配置**してください。
 
-## 動作環境 / 依存コマンド
+## 2. 動作環境 / 依存コマンド
 
 - OS: macOSまたはLinux（WindowsはWSL推奨）
 - Bash 3 以上（macOS付属のbashでも動作）
 - 利用コマンド: `unzip`, `zip`, `awk`, `sed`, `find`, `wc`, `tr`, `hexdump`
 - Google My Mapsでの読み込みを想定（KML/KMZ形式）
 
-## インストール
+## 3. インストール
 
 ```bash
 # クローン後（またはダウンロード後）
 chmod +x bash/*.sh
 ```
 
-## 使い方
+## 4. 使い方
 
-### A. `merge_kmz.sh`（単体で実行可能）
+### 4.1. A. `merge_kmz.sh`（単体で実行可能）
 
 ```
 Usage: ./bash/merge_kmz.sh OUTPUT.kmz INPUT1.kmz [INPUT2.kmz …]
@@ -51,7 +65,7 @@ Usage: ./bash/merge_kmz.sh OUTPUT.kmz INPUT1.kmz [INPUT2.kmz …]
   例: `2205060502_partFileName.kmz` → `partFileName`。
 - 出力: `OUTPUT.kmz`
 
-### B. `calcKML-selectKMZ.sh`（対話式フィルタ → 結合）
+### 4.2. B. `calcKML-selectKMZ.sh`（対話式フィルタ → 結合）
 
 ```
 Usage: ./bash/calcKML-selectKMZ.sh OUTPUT.kmz INPUT1.kmz [INPUT2.kmz …]
@@ -63,14 +77,14 @@ Usage: ./bash/calcKML-selectKMZ.sh OUTPUT.kmz INPUT1.kmz [INPUT2.kmz …]
 3. 選んだKMLを**含むKMZを一意化**して`merge_kmz.sh`に渡し、結合します。
 4. `merge_kmz.sh`が**同じディレクトリ（bash/またはpowershell/）**にあり、実行権限が必要です。
 
-## 注意点・既知の仕様
+## 5. 注意点・既知の仕様
 
 - Google My Maps側の制限により、非常に大きな KML/KMZは読み込みに時間がかかったり、分割が必要な場合があります。
 - 色指定は KML の仕様に合わせた **ABGR**（アルファ＋青緑赤）8 桁です。
 - 既存の`<Style>`と`<styleUrl>`は統一のため除去し、新しいスタイルを先に定義します。
 - `calcKML-selectKMZ.sh` で複数KMLを選んでも、**同じKMZに入っている場合は1回だけ渡します**（重複排除）。
 
-## サンプル
+## 6. サンプル
 
 ```bash
 # A. そのまま結合
