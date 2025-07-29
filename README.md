@@ -44,8 +44,8 @@ PowerShell版も同様に`powershell/`内で利用します。
 
 ## 3. インストール
 
+クローン後（またはダウンロード後）
 ```bash
-# クローン後（またはダウンロード後）
 chmod +x bash/*.sh
 ```
 
@@ -53,9 +53,14 @@ chmod +x bash/*.sh
 
 ### 4.1. A. `merge_kmz.sh`（単体で実行可能）
 
+Usage:
+```bash
+./bash/merge_kmz.sh OUTPUT.kmz INPUT1.kmz [INPUT2.kmz …]
 ```
-Usage: ./bash/merge_kmz.sh OUTPUT.kmz INPUT1.kmz [INPUT2.kmz …]
-例:    ./bash/merge_kmz.sh merged.kmz dir/25*.kmz
+
+例:
+```bash
+./bash/merge_kmz.sh merged.kmz dir/25*.kmz`
 ```
 
 - 実行すると「色の見本」を表示し、**最初のKMZに使う開始色**を尋ねます（1〜色数）。
@@ -67,9 +72,14 @@ Usage: ./bash/merge_kmz.sh OUTPUT.kmz INPUT1.kmz [INPUT2.kmz …]
 
 ### 4.2. B. `calcKML-selectKMZ.sh`（対話式フィルタ → 結合）
 
+Usage:
+```bash
+./bash/calcKML-selectKMZ.sh OUTPUT.kmz INPUT1.kmz [INPUT2.kmz …]
 ```
-Usage: ./bash/calcKML-selectKMZ.sh OUTPUT.kmz INPUT1.kmz [INPUT2.kmz …]
-例:    ./bash/calcKML-selectKMZ.sh merged.kmz dir/25*.kmz
+
+例:
+```bash
+./bash/calcKML-selectKMZ.sh merged.kmz dir/25*.kmz
 ```
 
 1. 各KMZ内の**KML一覧**（番号, サイズ\[bytes], パス）を表示。
@@ -86,10 +96,12 @@ Usage: ./bash/calcKML-selectKMZ.sh OUTPUT.kmz INPUT1.kmz [INPUT2.kmz …]
 
 ## 6. サンプル
 
+A. そのまま結合
 ```bash
-# A. そのまま結合
 ./bash/merge_kmz.sh output.kmz tracks/25*.kmz
+```
 
-# B. KMLを見てから絞り込み → 結合
+B. KMLを見てから絞り込み → 結合
+```bash
 ./bash/calcKML-selectKMZ.sh output.kmz tracks/25*.kmz
 ```
