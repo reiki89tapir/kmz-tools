@@ -14,10 +14,9 @@ PowerShell版も同様に`powershell/`内で利用します。
 - [2. 動作環境 / 依存コマンド](#2-動作環境--依存コマンド)
 - [3. インストール](#3-インストール)
 - [4. 使い方](#4-使い方)
-  - [4.1. A. `merge_kmz.sh`（単体で実行可能）](#41-a-merge_kmzsh単体で実行可能)
-  - [4.2. B. `calcKML-selectKMZ.sh`（対話式フィルタ → 結合）](#42-b-calckml-selectkmzsh対話式フィルタ--結合)
+  - [4.1. `merge_kmz.sh`（単体で実行可能）](#41-merge_kmzsh単体で実行可能)
+  - [4.2. `calcKML-selectKMZ.sh`（対話式フィルタ → 結合）](#42-calckml-selectkmzsh対話式フィルタ--結合)
 - [5. 注意点・既知の仕様](#5-注意点既知の仕様)
-- [6. サンプル](#6-サンプル)
 
 <!-- /TOC -->
 
@@ -51,7 +50,7 @@ chmod +x bash/*.sh
 
 ## 4. 使い方
 
-### 4.1. A. `merge_kmz.sh`（単体で実行可能）
+### 4.1. `merge_kmz.sh`（単体で実行可能）
 
 Usage:
 ```bash
@@ -70,7 +69,7 @@ Usage:
   例: `2205060502_partFileName.kmz` → `partFileName`。
 - 出力: `OUTPUT.kmz`
 
-### 4.2. B. `calcKML-selectKMZ.sh`（対話式フィルタ → 結合）
+### 4.2. `calcKML-selectKMZ.sh`（対話式フィルタ → 結合）
 
 Usage:
 ```bash
@@ -93,15 +92,3 @@ Usage:
 - 色指定は KML の仕様に合わせた **ABGR**（アルファ＋青緑赤）8 桁です。
 - 既存の`<Style>`と`<styleUrl>`は統一のため除去し、新しいスタイルを先に定義します。
 - `calcKML-selectKMZ.sh` で複数KMLを選んでも、**同じKMZに入っている場合は1回だけ渡します**（重複排除）。
-
-## 6. サンプル
-
-A. そのまま結合
-```bash
-./bash/merge_kmz.sh output.kmz tracks/25*.kmz
-```
-
-B. KMLを見てから絞り込み → 結合
-```bash
-./bash/calcKML-selectKMZ.sh output.kmz tracks/25*.kmz
-```
